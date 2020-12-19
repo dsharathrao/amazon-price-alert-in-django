@@ -11,21 +11,22 @@
      <form method="POST">
           	{% csrf_token %}
             <input class="form-control" name="url" type="text" placeholder="Search" aria-label="Search">
-
+<br>
           <p >
         <input class="btn btn-primary my-2" type="submit" name="showprice" value="Get results"></input>
-        <input class="btn btn-primary my-2" type="submit" name="saveprice" value="Get alert">
           </p>
 	</form>
 	   
 	{% if context.url %} 
 
-		<h2>Product Name : {{context.title}}</h2>
-		<h2>Product Price : {{context.price}}</h2>
-		<h2>Current Price date: {{context.nowdate}}</h2>
+		<h4>Product Name : {{context.title}}</h4>
+		<h4>Product Price : {{context.price}}</h4>
+		<h4>Current Price date: {{context.nowdate}}</h4>
+    <h4>Do you want save data and get update when price drop! Please fill below form</h4>
 	{% else %}
-		<h1>{{context.data}}</h1>
+		<h4>{{context.data}}</h4>
 	{% endif%} 
+
 
         </div>
       </section>
